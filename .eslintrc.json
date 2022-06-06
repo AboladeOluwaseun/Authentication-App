@@ -18,7 +18,7 @@
         "react"
     ],
     "rules": {
-        "quotes":["error", "double"],
+        "quotes":["warn", "double"],
         "semi": "error",
         "semi-spacing": "error",
         "semi-style": [
@@ -30,6 +30,8 @@
         "space-in-parens": [
             "error",
             "never"
-        ]
+        ],
+        "newline-after-var":"warn"
+        
     }
 }

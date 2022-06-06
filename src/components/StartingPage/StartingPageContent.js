@@ -1,4 +1,5 @@
-import classes from './StartingPageContent.module.css';
+import classes from "./StartingPageContent.module.css";
+import React from "react";
 
 const StartingPageContent = () => {
   return (

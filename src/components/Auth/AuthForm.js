@@ -1,6 +1,4 @@
-/* eslint-disable consistent-return */
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable no-empty */
+import React from "react";
 import { useState, useRef, useContext } from "react";
 import { useHistory } from "react-router";
 import AuthContext from "../../store/auth-context";
@@ -24,8 +22,10 @@ const AuthForm = () => {
 
     const entredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
+
     setIsLoading(true);
     let url;
+
     if (isLogin) {
       url =
         "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAoN-ssiuWLLw_jL0KRU3AzjBZr4PQnwIM";
@@ -51,12 +51,14 @@ const AuthForm = () => {
             const expirationTime = new Date(
               new Date().getTime() + +data.expiresIn * 1000
             );
-            Authctx.login(data.idToken, expirationTime.toString());
+
+            Authctx.login(data.idToken, expirationTime.toISOString());
             History.replace("/");
           });
         } else {
           return res.json().then((data) => {
             let errorMessaage = "Authentication Failed";
+
             if (data && data.error && data.error.message) {
               errorMessaage = data.error.message;
             }

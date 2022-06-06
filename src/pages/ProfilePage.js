@@ -1,7 +1,8 @@
-import UserProfile from '../components/profile/user-profile';
+/* eslint-disable func-style */
+/* eslint-disable react/react-in-jsx-scope */
+import React from "react";
+import UserProfile from "../components/profile/user-profile";
 
-const ProfilePage = () => {
-  return <UserProfile />;
-};
+const ProfilePage = () => <UserProfile />;
 
 export default ProfilePage;
